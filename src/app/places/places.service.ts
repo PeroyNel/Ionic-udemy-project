@@ -8,29 +8,35 @@ import { Place } from './place.model';
 export class PlacesService {
   private _places: Place[] = [
     new Place(
-    'p1', 
-    'Manhattan Mansion', 
-    'In the heart of New York City.', 
-    'https://blog-www.pods.com/wp-content/uploads/2019/11/MG_NY_6_1_Manhattan.jpg', 
-    149.99
+      'p1',
+      'Manhattan Mansion',
+      'In the heart of New York City.',
+      'https://lonelyplanetimages.imgix.net/mastheads/GettyImages-538096543_medium.jpg?sharp=10&vib=20&w=1200',
+      149.99
     ),
     new Place(
-    'p2', 
-    'Eiffel Tower', 
-    'The gem of Paris.', 
-    'https://www.travelandleisure.com/thmb/xyyOmec2yAqPGBcN-Y2FLfFadu0=/1600x1000/filters:fill(auto,1)/eiffel-tower-paris-france-EIFFEL0217-6ccc3553e98946f18c893018d5b42bde.jpg', 
-    199.99),
+      'p2',
+      "L'Amour Toujours",
+      'A romantic place in Paris!',
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Paris_Night.jpg/1024px-Paris_Night.jpg',
+      189.99
+    ),
     new Place(
-      'p3', 
-      'Castle Grand', 
-      'A stronghold.', 
-      'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bojnice-castle-1603142898.jpg', 
-      99.99)
+      'p3',
+      'The Foggy Palace',
+      'Not your average city trip!',
+      'https://upload.wikimedia.org/wikipedia/commons/0/01/San_Francisco_with_two_bridges_and_the_fog.jpg',
+      99.99
+    )
   ];
 
-  get places () {
+  get places() {
     return [...this._places];
   }
-  
-  constructor() { }
+
+  constructor() {}
+
+  getPlace(id: string) {
+    return {...this._places.find(p => p.id === id)};
+  }
 }
